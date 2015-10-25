@@ -27,7 +27,7 @@
                                             <span class="formwraper">
                                                 <input type="text" class="input-xxlarge" name="parameter" value="<?php if (isset($this->session->all_userdata()['parameter'])){echo $this->session->all_userdata()['parameter'];} ?>" placeholder="Parameter"/>&nbsp; &nbsp;
                                                 <input value="no_agenda" type="radio" checked="checked" name="berdasarkan" /> No Agenda &nbsp; &nbsp;
-                                                <input value="no_surat" type="radio" name="berdasar" /> No Surat &nbsp; &nbsp;
+                                                <input value="no_surat" type="radio" name="berdasarkan" /> No Surat &nbsp; &nbsp;
                                                 <input value="pengirim" type="radio" name="berdasarkan" /> Pengirim  &nbsp; &nbsp;
                                                 <input value="tgl_surat" type="radio" name="berdasarkan" /> Tanggal Surat &nbsp; &nbsp;
                                                 <input value="tgl_masuk" type="radio" name="berdasarkan" /> Tanggal Masuk &nbsp; &nbsp;
