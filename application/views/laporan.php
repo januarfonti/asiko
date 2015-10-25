@@ -44,8 +44,8 @@
             if (isset($this->session->all_userdata()['parameter']))
             { 
             ?>
-              <a class="btn btn-success" href="<?php echo base_url('laporan/excel'); ?>">Simpan ke Excel</a>
-              <button onclick="javascript:demoFromHTML();">PDF</button>
+              <a style="color:#fff;" class="btn btn-success" href="<?php echo base_url('laporan/excel'); ?>">Simpan ke Excel</a>
+              <a style="color:#fff;" class="btn btn-success" href="<?php echo base_url('laporan/pdf'); ?>">Simpan ke PDF</a>
             <?php
           }
             ?>
