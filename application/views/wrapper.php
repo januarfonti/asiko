@@ -12,6 +12,7 @@
 
 
 <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/jquery-1.9.1.min.js"></script>
+
 <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/jquery.nicescroll.js"></script>
 <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/jquery-migrate-1.1.1.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/jquery-ui-1.10.3.min.js"></script>
@@ -70,7 +71,7 @@
                 </li>
                 <li class="right">
                     <div class="userloggedinfo">
-                        <img src="images/photos/thumb1.png" alt="" />
+                        <img src="<?php echo base_url('assets/images/photos/'.$this->ion_auth->user()->row()->foto); ?>" alt="" />
                         <div class="userinfo">
                             <h5><?php echo $this->ion_auth->user()->row()->first_name.' '.$this->ion_auth->user()->row()->last_name; ?> <small>- <?php echo $this->ion_auth->user()->row()->email; ?></small></h5>
                             <ul>

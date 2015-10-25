@@ -193,8 +193,8 @@
 
                         <p class="animate20 bounceIn stdformbutton">
                                 <label></label>
-                                <button class="btn btn-primary">Submit Button</button>
-                                <button type="reset" class="btn">Reset Button</button>
+                                <button class="btn btn-inverse">Simpan</button>
+                                <button type="reset" class="btn">Reset</button>
                             </p>
                                         
                         

@@ -12,6 +12,10 @@
                 
 
                     <div id="infoMessage"><?php echo $message;?></div>
+
+                    
+                    <a class="btn btn-inverse" style="color:#fff;" href="<?php echo base_url('auth/create_user'); ?>"><i class="fa fa-plus"></i> Tambah Pengguna</a> 
+
                     <h4 class="widgettitle"><i class="fa fa-users"></i> Daftar Pengguna</h4>
                     <table class="table table-striped table-bordered responsive" id="tabel-user">
                         <thead>
@@ -19,7 +23,6 @@
                             <th><?php echo lang('index_fname_th');?></th>
                             <th><?php echo lang('index_lname_th');?></th>
                             <th><?php echo lang('index_email_th');?></th>
-                            <th><?php echo lang('index_groups_th');?></th>
                             <th><?php echo lang('index_status_th');?></th>
                             <th><?php echo lang('index_action_th');?></th>
                         </tr>
@@ -30,19 +33,14 @@
                                 <td><?php echo htmlspecialchars($user->first_name,ENT_QUOTES,'UTF-8');?></td>
                                 <td><?php echo htmlspecialchars($user->last_name,ENT_QUOTES,'UTF-8');?></td>
                                 <td><?php echo htmlspecialchars($user->email,ENT_QUOTES,'UTF-8');?></td>
-                                <td>
-                                    <?php foreach ($user->groups as $group):?>
-                                        <?php echo anchor("auth/edit_group/".$group->id, htmlspecialchars($group->name,ENT_QUOTES,'UTF-8')) ;?><br />
-                                    <?php endforeach?>
-                                </td>
                                 <td><?php echo ($user->active) ? anchor("auth/deactivate/".$user->id, lang('index_active_link')) : anchor("auth/activate/". $user->id, lang('index_inactive_link'));?></td>
-                                <td><?php echo anchor("auth/edit_user/".$user->id, 'Edit') ;?></td>
+                                <td><?php echo anchor("auth/edit_user/".$user->id, 'Edit',array('class' => 'btn btn-success ','style' => 'color:#fff;' ) ) ;?></td>
                             </tr>
                         <?php endforeach;?>
                         </tbody>
                     </table>
 
-                    <p><?php echo anchor('auth/create_user', lang('index_create_user_link'))?> | <?php echo anchor('auth/create_group', lang('index_create_group_link'))?></p>
+                    
                 
                 
             </div><!--maincontentinner-->

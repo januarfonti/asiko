@@ -11,6 +11,11 @@ class Surat_model extends CI_Model
 		return $this->db->get('tbl_suratmasuk')->result();
 	}
 
+	function cari($parameter,$berdasarkan)
+	{
+		return $this->db->query("select * from tbl_suratmasuk where $berdasarkan = '$parameter'")->result();
+	}
+
 	function upload($data)
 	{
 		$this->db->insert('tbl_suratmasuk',$data);
