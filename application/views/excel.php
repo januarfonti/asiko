@@ -91,9 +91,8 @@
                 <!-- EXPORT EXCEL START -->
 <?php
     $tanggal=date("Ymd");
-    //header("Content-type: application/x-msdownload");
-    header("Content-type:application/pdf");
-    header("Content-Disposition: attachment; filename=Laporan_Surat_Masuk".$tanggal.".pdf");
+    header("Content-type: application/x-msdownload");
+    header("Content-Disposition: attachment; filename=Laporan_Surat_Masuk".$tanggal.".xls");
     header("Pragma: no-cache");
     header("Expires: 0");
     print "$header\n$data";
