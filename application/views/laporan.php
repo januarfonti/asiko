@@ -1,5 +1,4 @@
-<script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/jquery-1.9.1.min.js"></script>
-<script type="text/javascript" src="<?php echo base_url('assets'); ?>/js/jspdf.debug.js"></script>
+
 <div class="rightpanel">
         
 
@@ -26,7 +25,7 @@
 
                                         <p>
                                             <span class="formwraper">
-                                                <input type="text" class="input-xxlarge" name="parameter" value="<?php echo $this->session->all_userdata()['parameter']; ?>" placeholder="Parameter"/>&nbsp; &nbsp;
+                                                <input type="text" class="input-xxlarge" name="parameter" value="<?php if (isset($this->session->all_userdata()['parameter'])){echo $this->session->all_userdata()['parameter'];} ?>" placeholder="Parameter"/>&nbsp; &nbsp;
                                                 <input value="no_agenda" type="radio" checked="checked" name="berdasarkan" /> No Agenda &nbsp; &nbsp;
                                                 <input value="no_surat" type="radio" name="berdasar" /> No Surat &nbsp; &nbsp;
                                                 <input value="pengirim" type="radio" name="berdasarkan" /> Pengirim  &nbsp; &nbsp;
@@ -41,7 +40,8 @@
                                 </div>
                 
             <?php 
-            if ($this->session->all_userdata()['parameter'] != "")
+            //if ($this->session->all_userdata()['parameter'] != "")
+            if (isset($this->session->all_userdata()['parameter']))
             { 
             ?>
               <a class="btn btn-success" href="<?php echo base_url('laporan/excel'); ?>">Simpan ke Excel</a>
@@ -120,46 +120,3 @@
         </div><!--maincontent-->
         
     </div><!--rightpanel-->
-
-
-    <script type="text/javascript">
-      function demoFromHTML() {
-    var pdf = new jsPDF('p', 'pt', 'letter');
-    // source can be HTML-formatted string, or a reference
-    // to an actual DOM element from which the text will be scraped.
-    source = $('#customers')[0];
-
-    // we support special element handlers. Register them with jQuery-style 
-    // ID selector for either ID or node name. ("#iAmID", "div", "span" etc.)
-    // There is no support for any other type of selectors 
-    // (class, of compound) at this time.
-    specialElementHandlers = {
-        // element with id of "bypass" - jQuery style selector
-        '#bypassme': function (element, renderer) {
-            // true = "handled elsewhere, bypass text extraction"
-            return true
-        }
-    };
-    margins = {
-        top: 80,
-        bottom: 60,
-        left: 40,
-        width: 522
-    };
-    // all coords and widths are in jsPDF instance's declared units
-    // 'inches' in this case
-    pdf.fromHTML(
-    source, // HTML string or DOM elem ref.
-    margins.left, // x coord
-    margins.top, { // y coord
-        'width': margins.width, // max width of content on PDF
-        'elementHandlers': specialElementHandlers
-    },
-
-    function (dispose) {
-        // dispose: object with X, Y of the last line add to the PDF 
-        //          this allow the insertion of new lines after html
-        pdf.save('Test.pdf');
-    }, margins);
-}
-    </script>
